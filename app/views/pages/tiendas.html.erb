@@ -1,0 +1,9 @@
+<h1>Tiendas</h1>
+
+<ul>
+    <% @tiendas.each do | tienda | %>
+    <li><%= tienda %></li>
+    <% end %>
+</ul>
+
+<p>La tienda elegida es: <%= @tienda%></p>

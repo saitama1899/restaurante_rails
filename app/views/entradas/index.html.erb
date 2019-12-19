@@ -1,0 +1,27 @@
+<h1>Listar Entradas</h1>
+ 
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Texto</th>
+    <th>Fecha de creación</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @entradas.each do |entrada| %>
+    <tr>
+      <td><%= entrada.titulo %></td>
+      <td><%= entrada.texto %></td>
+      <td><%= entrada.created_at %></td>
+      <%# entrada_path(entrada) le paso el objeto por que el ya identifica los parametros que necesita %>
+      <td><%= link_to 'Mostrar', entrada_path(entrada) %></td>
+      <%# Para editar necesita usar edit_entrada %>
+      <td><%= link_to 'Editar', edit_entrada_path(entrada) %></td>
+      <td><%= link_to 'Borrar', entrada_path(entrada), method: :delete %></td>
+
+    </tr>
+<% end %>
+
+</table>

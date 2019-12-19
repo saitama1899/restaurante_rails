@@ -1,0 +1,101 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+
+@import url(https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+
+$amarillo: #ffeb00;
+$rojo: #ca1818e0;
+
+%box-shadow{
+   -webkit-box-shadow: 6px 6px 1px 1px rgba(77,77,77,1);
+   -moz-box-shadow: 6px 6px 1px 1px rgba(77,77,77,1);
+   box-shadow: 6px 6px 1px 1px rgba(77,77,77,1);
+}
+
+.card-img {
+   width: 280px;
+}
+
+.card {
+   @extend %box-shadow;  
+   background: white;
+   // border-radius: 8px;
+   padding: 17px;
+   margin-bottom: 30px;
+}
+
+.card-title{
+   font-family: 'Arvo', cursive;
+   font-size: 26px;
+   color: $rojo;
+}
+.card-text{
+   font-family: 'Arvo', cursive;
+   font-size: 15px;
+}
+body {
+   background-color: $rojo;
+}
+
+.btn-group, .btn-group-vertical {
+   display: table;
+   vertical-align: middle;
+   margin: 0 auto;
+}
+
+.btn-anadir{
+   float: right;
+   margin: 20px;
+}
+
+.navbar-inverse {
+   border-radius: 0px;
+}
+
+.navbar-brand{
+   font-size: 30px;
+   font-family: 'Vast Shadow'
+}
+
+.navbar-inverse a {
+   color: white!important;
+}
+
+.navbar-nav{
+   font-size: 18px;
+   float: right;
+}
+
+.dropdown-menu{
+   background-color: #383838;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+   background: #9e9e9e9e;
+}
+.titulo {
+   font-size: 40px;
+   text-align: center;
+   color: $amarillo;
+   font-family: 'Arvo';
+}
+
+.card-precio{
+   width: fit-content;
+   font-size: 30px;
+   background-color: $rojo;
+   color: white;
+   padding: 11px;
+   line-height: normal;
+   border-radius: 40px;
+}
+
+.form-plato{
+   @extend %box-shadow;
+   margin: 0 auto;
+   width: fit-content;
+   padding: 30px;
+   background-color: $amarillo;
+}

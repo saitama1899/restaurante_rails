@@ -1,0 +1,14 @@
+<h1 class="titulo">Detalles del restaurante</h1>
+
+<div class="form-plato">
+<%= image_tag "restaurante-placeholder.jpg", alt: "restaurante", class: "card-img" %>
+<br><br>
+  <p>
+    <strong>Restaurante:</strong>
+    <%= @restaurante.titulo %>
+  </p>
+  <p>
+    <strong>Dirección:</strong>
+    <%= @restaurante.direccion %>
+  </p>
+</div>

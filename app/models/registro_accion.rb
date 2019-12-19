@@ -1,0 +1,2 @@
+class RegistroAccion < ApplicationRecord
+end

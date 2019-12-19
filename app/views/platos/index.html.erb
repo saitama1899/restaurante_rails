@@ -1,0 +1,33 @@
+<h1 class="titulo">Nuestros platos mas populares</h1>
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <% @platos.each do | plato | %>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"><%= plato.titulo %></h4>
+                  <%= image_tag "kebab.jpg", alt: "plato", class: "card-img" %>
+                  <p class="card-text"><%= plato.descripcion %></p>
+                  <p class="card-precio"><%= plato.precio.to_i %>€</p>
+                </div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <%# plato_path(plato) le paso el objeto por que el ya identifica los parametros que necesita %>
+                <button class="btn btn-light btn-secondary"><%= link_to 'Mostrar', plato_path(plato) %></button>
+                <%# Para editar necesita usar edit_plato %>
+                <button class="btn btn-light btn-secondary"><%= link_to 'Editar', edit_plato_path(plato) %></button>
+                <button class="btn btn-light btn-secondary"><%= link_to 'Borrar', plato_path(plato), method: :delete %></button>
+              </div>
+            </div>
+
+        </div>
+    <% end %>
+    <br>
+    <button type="button" class="btn btn-light btn-anadir"><%=link_to "Añadir plato +", controller: "platos", action: "new" %></button>
+    <br>
+    <button type="button" class="btn btn-light btn-anadir"><%=link_to "Añadir restaurante +", controller: "restaurantes", action: "new" %></button>
+  </div>
+</div>

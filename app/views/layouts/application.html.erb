@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>King Döner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "estilo" %>
+  </head>
+
+  <body>
+
+    <%# Menu %>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <%=link_to "King Döner", {controller: "platos", action: "index"}, class: "navbar-brand" %>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><%=link_to "Inicio", {controller: "platos", action: "index"}, class: "active" %></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuestros restaurantes
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><%= link_to "Ver todos los restaurantes", controller: "restaurantes", action: "index" %></li>
+                <% @restaurantes.each do | restaurante | %>
+                <li><%= link_to restaurante.titulo, restaurante_path(restaurante) %></li>
+                <% end %>
+            </ul>
+          </li>
+          <li><%=link_to "Nosotros", controller: "pages", action: "nosotros" %></li>
+          <li><%=link_to "Contactar", controller: "pages", action: "contactar" %></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
