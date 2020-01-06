@@ -1,0 +1,24 @@
+<%= form_with model: @restaurante, local: true, class: "form-plato" do |form| %>
+
+    <% if @restaurante.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+            <%= pluralize(@restaurante.errors.count, "error") %> prohibited
+            this article from being saved:
+            </h2>
+            <ul>
+            <% @restaurante.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= form.collection_select(:plato_id, Restaurante.all, :id, :titulo) %>
+    <%= form.collection_select(:restaurante_id, Plato.all, :id, :titulo) %>
+    
+    <br><br>
+
+    <%= form.submit %>
+
+<% end %>

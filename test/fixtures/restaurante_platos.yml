@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_restaurante: 1
-  id_plato: 1
+  restaurante: one
+  plato: one
 
 two:
-  id_restaurante: 1
-  id_plato: 1
+  restaurante: two
+  plato: two

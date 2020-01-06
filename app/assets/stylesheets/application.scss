@@ -99,3 +99,23 @@ body {
    padding: 30px;
    background-color: $amarillo;
 }
+
+.checkbox-platos {
+   overflow: scroll;
+   height: 200px;
+   background-color: #fff581;
+   padding: 10px;
+   width: 250px;
+   border: 1px #a7a7a7 solid;
+}
+.checkbox-platos label{
+   display: block;
+   border-bottom: 1px #a7a7a7 solid;
+}
+
+.checkbox-platos input[type="checkbox"] {
+   width: 20px;
+   height: 20px;
+   float: left;
+   margin-right: 10px;
+}

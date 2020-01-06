@@ -11,4 +11,10 @@
     <strong>Dirección:</strong>
     <%= @restaurante.direccion %>
   </p>
+  <p >
+    <strong>Platos:</strong>
+    <% @restaurante.platos.each do | plato |%>
+      <li><%= link_to plato.titulo, plato_path(plato)%></li>
+    <% end %>
+  </p>
 </div>

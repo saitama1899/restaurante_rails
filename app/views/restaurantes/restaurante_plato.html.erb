@@ -1,4 +1,3 @@
-<%# model en lugar del scope de NEW para que sea EDIT %>
 <%= form_with model: @restaurante, local: true, class: "form-plato" do |form| %>
 
   <% if @restaurante.errors.any? %>
@@ -16,22 +15,14 @@
   <% end %>
 
   <p>
-    <%= form.label :titulo %><br>
-    <%= form.text_field :titulo %>
+    <%= form.label :restaurante_id %><br>
+    <%= form.text_field :restaurante_id %>
   </p>
- 
   <p>
-    <%= form.label :direccion %><br>
-    <%= form.text_area :direccion %>
-  </p>
-
-  <label>Platos del restaurante</label>
-  <p class="checkbox-platos">
-    <%= form.collection_check_boxes :plato_ids, Plato.all, :id, :titulo %>
+    <%= form.label :plato_id %><br>
+    <%= form.text_field :plato_id %>
   </p>
   
-  <p>
-  </p>
   <p class="btn btn-dark">
     <%= form.submit %>
   </p>

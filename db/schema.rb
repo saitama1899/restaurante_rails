@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_100636) do
+ActiveRecord::Schema.define(version: 2019_12_19_191848) do
 
   create_table "entradas", force: :cascade do |t|
     t.string "titulo"
@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(version: 2019_12_19_100636) do
   end
 
   create_table "restaurante_platos", force: :cascade do |t|
-    t.integer "id_restaurante"
-    t.integer "id_plato"
+    t.integer "restaurante_id", null: false
+    t.integer "plato_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["plato_id"], name: "index_restaurante_platos_on_plato_id"
+    t.index ["restaurante_id"], name: "index_restaurante_platos_on_restaurante_id"
   end
 
   create_table "restaurantes", force: :cascade do |t|
@@ -49,4 +51,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_100636) do
     t.string "direccion"
   end
 
+  add_foreign_key "restaurante_platos", "platos"
+  add_foreign_key "restaurante_platos", "restaurantes"
 end
